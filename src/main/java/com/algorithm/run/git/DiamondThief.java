@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 
-public class Main {
+public class DiamondThief {
 	static int N;
 	static int K;
 	static Diamond[] nInfo;
