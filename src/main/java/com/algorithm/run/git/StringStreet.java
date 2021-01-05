@@ -5,61 +5,125 @@ import java.util.*;
 
 
 public class StringStreet {
-	static String O;
-	static String N;
-	static char[] oArr;
-	static char[] nArr;
+
+	static char[] O;
+	static char[] N;
 	static boolean[][] visited;
 	static boolean[] visitedCnt;
-	static int cnt = 0;
+	static int count = 0;
+	static int totalCnt= -1;
 
 	public static void main(String[] args) throws IOException{
 		
 		Scanner sc = new Scanner(System.in);
+		String oStr = sc.nextLine();
+		String nStr = sc.nextLine();
 
-		O = sc.nextLine();
-		N = sc.nextLine();
-		oArr = O.toCharArray();
-		nArr = N.toCharArray();
+		O = oStr.toCharArray();
+		N = nStr.toCharArray();
 		
-		visited = new boolean[oArr.length][nArr.length];
-		visitedCnt = new boolean[nArr.length];
+		if(oStr.equals(nStr)) {
+			System.out.println(0);
+			return;
+		}
 		
-		for(int i = 0 ; i < oArr.length ; i++) {
-			
-			for(int j = 0 ; j < nArr.length ; j++) {
-				if(oArr[i] == nArr[j]) {
+		visited = new boolean[O.length][N.length];
+		visitedCnt = new boolean[N.length]; 
+		for(int i = 0 ; i < O.length ; i++) {
+			for(int j = 0 ; j < N.length ; j++) {
+				if(O[i] == N[j]) {
 					visited[i][j] = true;
 				}
 			}
 
 		}
-		int k = 0;
-		for(int i = 0 ; i < visited.length ; i++) {
-			for(int j = 0 ; j < visited[i].length ; j++) {
-				if(visited[0][j]) {
-					
-				}else if(visited[i][j] && j > k) {
-					
-				}
-				
+		
+		for(int i = 0 ; i < visited[0].length ; i++) {
+			if(visited[0][i]) {
+				bfs( 0 , i);
 			}
 		}
 		
 		
-		for(int i = 0 ; i < visitedCnt.length ; i++) {
-			if(i == 0 && visitedCnt[i] == false) {
-				cnt++;
-			}else if(i == 0 && visitedCnt[i] == true) {
+		
+		System.out.println(totalCnt);
+
+	}
+	
+	static void bfs(int x , int y) {
+		Queue<Point> q = new LinkedList<Point>();
+		q.add(new Point(x , y , null));
+		
+		while(!q.isEmpty()) {
+			Point p   = q.poll();
+			int xIndex = p.x;
+			int yIndex = p.y;
+			
+			if(xIndex == O.length - 1) {
+				totalVisitCnt(p.sb.toString());
+				continue;
+			}
+			
+			int limit = N.length - O.length + xIndex + 2;
+			for(int i = yIndex + 1 ; i < limit  ; i++) {
+				if(visited[xIndex + 1][i] ) {
+					q.add(new Point(xIndex + 1 ,  i , p.sb.toString()));
+				}
+			}
+			
+		}
+	}
+	static void totalVisitCnt(String str) {
+		count = 0;
+
+		for(int i = 0 ; i < str.split(",").length ; i++) {
+			for(int j = 0 ; j <visitedCnt.length ; j++) {
+				if(Integer.parseInt(str.split(",")[i]) == j) {
+					visitedCnt[j]  = true;
+				}else {
+					visitedCnt[j]  = false;
+				}
+			}
+		}
+		
+		for(int i = 0 ; i <visitedCnt.length ; i++) {
+			if( i == 0 && !visitedCnt[0]) {
+				count++;
+			}else {
+				if(visitedCnt[i -1] == true && visitedCnt[i] == false) {
+					count++;
+				}
+			}
+		}
+		
+		if(totalCnt < 0) {
+			totalCnt = count;
+		}else {
+			if(totalCnt >= count) {
+				totalCnt = count;
+			}
+		}
+		
+	}
+	
+	static class Point{
+		int x;
+		int y;
+		int[] intArr;
+		StringBuilder sb  = new StringBuilder();
+		
+		public Point(int x, int  y, String str) {
+			this.x = x;
+			this.y = y;
+			if(str == null || str.equals("")) {
 				
 			}else {
-				if(visitedCnt[i - 1] == true && visitedCnt[i] == false) {
-					cnt++;
-				}
+				sb.append(str);
+				sb.append(",");
 			}
+			sb.append(y);
+			
 		}
-		
-
 	}
 
 
