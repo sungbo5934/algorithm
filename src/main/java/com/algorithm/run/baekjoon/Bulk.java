@@ -1,4 +1,4 @@
-package com.algorithm.run.backjun;
+package com.algorithm.run.baekjoon;
 
 import java.util.*;
 import java.util.stream.Collectors;
