@@ -1,4 +1,4 @@
-package com.algorithm.run.backjun;
+package com.algorithm.run.baekjoon;
 
 import java.util.Arrays;
 import java.util.Scanner;

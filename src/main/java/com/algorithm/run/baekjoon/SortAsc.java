@@ -1,4 +1,4 @@
-package com.algorithm.run.backjun;
+package com.algorithm.run.baekjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;

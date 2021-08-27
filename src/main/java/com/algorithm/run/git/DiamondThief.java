@@ -37,7 +37,7 @@ public class DiamondThief {
 		Arrays.sort(nInfo,  new ComparatorDiaWit());
 		Arrays.sort(kInfo);
 
-		PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
 		int index = 0;
 		for(int i : kInfo) {
 			while(index < N && nInfo[index].weight <= i) {
@@ -64,7 +64,6 @@ public class DiamondThief {
 			this.price = price;
 		}
 
-		@Override
 		public int compareTo(Diaindex o) {
 			 if (this.price < o.price) {
 				 return 1;
