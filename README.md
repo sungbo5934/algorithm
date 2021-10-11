@@ -5,8 +5,7 @@
      -> 당분간 알고리즘은 프래그래머스에서 직접 검사, 깃 커밋 없음
      -> 프로그래머스 작업 소스 각각의 JAVA 파일로 소스 올려서 복기 예정
   3) 카카오 코딩테스트 싸이트참조
-  4) 백준을 통한 알고리즘 분류를 통한 취약한 분류 연습
+  4) 백준을 통한 알고리즘 분류를 통한 취약한 분류 연습 -> https://www.acmicpc.net/problem/tags -> dp (동적프로그래밍) 연습
   5) https://www.hackerrank.com/ 해커랭크
   6) 코테 본 문제 정리해서 다시 
   7) LeetCode 공부 해 보기
-  8) https://www.acmicpc.net/problem/tags -> dp (동적프로그래밍) 연습
