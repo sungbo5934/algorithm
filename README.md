@@ -9,3 +9,4 @@
   5) https://www.hackerrank.com/ 해커랭크
   6) 코테 본 문제 정리해서 다시 
   7) LeetCode 공부 해 보기
+  8) 알고리즘 복습
