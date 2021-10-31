@@ -61,7 +61,9 @@ public class CarSell {
 	public static void main(String[] args) {
 		int[] prices = new int[1000000];
 		for(int i = 0 ; i < prices.length ; i++) {
-			prices[i] = (int)(Math.random() * 100);
+			//prices[i] = (int)(Math.random() * 100);
+			//prices[i] = i  + 1;
+			prices[i] = prices.length - i;
 		}
 		//int[] prices = {5,2,1,5,9,1,5};
 		//int[] prices = {5,2,1,5,9,1,5};
