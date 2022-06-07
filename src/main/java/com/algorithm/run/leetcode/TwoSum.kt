@@ -5,6 +5,6 @@ package com.algorithm.run.leetcode
  */
 class TwoSum {
     fun twoSum(nums: IntArray, target: Int): IntArray {
-
+        return intArrayOf()
     }
 }
