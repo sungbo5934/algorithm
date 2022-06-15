@@ -40,7 +40,6 @@ class MaximumSubarray {
         return result
     }
 }
-
 fun main(arr: Array<String>){
     val param: IntArray = intArrayOf(-2, 1)
     println(MaximumSubarray().maxSubArray(param))
