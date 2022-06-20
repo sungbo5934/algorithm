@@ -1,5 +1,8 @@
 package com.algorithm.run.leetcode
 
+/**
+ * https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+ */
 class FindMinimumInRotatedSortedArray {
     fun findMin(nums: IntArray): Int {
         var result = Int.MAX_VALUE
